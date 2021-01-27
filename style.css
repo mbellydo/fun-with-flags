@@ -1,0 +1,235 @@
+@import url('https://fonts.google.com/specimen/Nunito+Sans');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	--background: hsl(0, 0%, 98%);
+	--element: hsl(0, 0%, 100%);
+	--text: hsl(200, 15%, 8%); 
+	--input: hsl(0, 0%, 52%);
+
+	--shadow: 0 1px 7px rgba(0, 0, 0, 0.07);
+
+	--font-primary: 'Nunito Sans', sans-serif;
+
+	--margin-side: 15px;
+
+	background-color: var(--background);
+	color: var(--text);
+	font-family: var(--font-primary);
+	margin: 0;
+}
+
+body.dark {
+	--background: hsl(207, 26%, 17%);
+	--element: hsl(209, 23%, 22%);
+	--text: hsl(0, 0%, 100%);
+	--input: hsl(0, 0%, 100%);
+}
+
+header {
+	background-color: var(--element);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+	padding: 30px var(--margin-side);
+	margin-bottom: 25px;
+}
+
+img {
+	max-width: 100%;
+}
+
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	margin: auto;
+	position: relative;
+}
+
+h1 {
+	margin: 0;
+	font-weight: 800;
+	font-size: 14px;
+	letter-spacing: 0.2px;
+}
+
+
+/* BOTÓ LIGHT/DARK MODE */
+
+.btn-toggle {
+	background-color: var(--element);
+	border: none;
+	outline: none;
+	color: var(--text);
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 12px;
+	letter-spacing: 0.2px;
+	width: 80px;
+	font-family: var(--font-primary);
+	padding: 0;
+}
+
+.btn-toggle .fas {
+	display: none;
+}
+
+body.dark .btn-toggle .fas {
+	display: inline-block;
+}
+
+body.dark .btn-toggle .far {
+	display: none;
+}
+
+
+/* 	SEARCH INPUT */
+
+.search-bar {
+	background-color: var(--element);
+	border-radius: 4px;
+	box-shadow: var(--shadow);
+	padding: 0px 30px;
+	height: 48px;
+	width: 100%;
+	margin: 0 var(--margin-side) 40px var(--margin-side);
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	position: relative;
+}
+
+.search-bar input {
+	background-color: var(--element);
+	outline: none;
+	border: none;
+	font-family: var(--font-primary);
+	font-size: 12px;
+	letter-spacing: 0.2px;
+	margin-left: 20px;
+}
+
+.search-bar .fa-search {
+	color: var(--input);
+	font-size: 14px;
+}
+
+.search-bar input::placeholder {
+	color: var(--input);
+}
+
+
+/* FILTRE */
+
+.dropdown {
+	border-radius: 4px;
+	background-color: var(--element);
+	box-shadow: var(--shadow);
+	cursor: pointer;
+	font-family: var(--font-primary);
+	font-size: 12px;
+	letter-spacing: 0.2px;
+	position: relative;
+	margin: 0px var(--margin-side) 32px var(--margin-side);
+	padding: 16px 24px;
+	width: 200px;
+}
+
+.dropdown .fa-chevron-down {
+	font-size: 9px;
+}
+
+.dropdown ul {
+	border-radius: 4px;
+	background-color: var(--element);
+	box-shadow: var(--shadow);
+	/*display: none;*/
+	padding: 8px 24px;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	list-style-type: none;
+	width: 100%;
+	z-index: 99;
+	margin: 4px 0 0 0;
+}
+
+/*.dropdown ul ul{
+	display: none;
+}*/
+
+.dropdown  ul>li:active{
+	display: block;
+}
+
+.dropdown ul li {
+	margin: 8px 0;
+}
+
+
+/* CARDS */
+
+.countries {
+	margin: 0 var(--margin-side) 65px var(--margin-side);
+	display: grid;
+	grid-template-columns: auto;
+	justify-content: center;
+	grid-gap: 40px;
+}
+
+.card {
+	border-radius: 4px;
+	background-color: var(--element);
+	box-shadow: var(--shadow);
+	cursor: pointer;
+	overflow: hidden;
+	width: 264px;
+}
+
+.card .img-container {
+	height: 160px;
+	overflow: hidden;
+	position: relative;
+	background-color: var(--text);
+}
+
+.card img {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 100%;
+}
+
+.card-body {
+	padding: 26px 26px 40px 26px;
+}
+
+.card-body h3 {
+	margin: 0 0 15px 0;
+	font-size: 18px;
+	font-weight: 800;
+}
+
+.card-body p {
+	font-size: 14px;
+	font-weight: 300;
+	margin: 5px 0px;
+}
+
+.card-body p strong {
+	font-weight: 600;
+}
+
+.container.countries {
+	margin-top: -40px;
+	justify-content: center;
+}
+

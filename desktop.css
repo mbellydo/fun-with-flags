@@ -1,0 +1,64 @@
+@media only screen and (min-width: 768px) {
+
+	body {
+        --margin-side: 80px;
+    }
+
+    header {
+        padding: 24px var(--margin-side);
+        margin-bottom: 48px;
+    }
+
+    h1 {
+        font-size: 23px;
+        letter-spacing: 0.02em;
+    }
+
+
+    /* BOTÓ LIGHT/DARK MODE */
+
+    .btn-toggle {
+        font-size: 16px;
+        width: 110px;
+    }
+
+
+    /* 	SEARCH INPUT */
+
+    .search-bar {
+        width: 480px;
+        margin: 0 var(--margin-side);
+        height: 56px;
+    }
+
+    .search-bar input {
+        font-size: 14px;
+    }
+
+    .search-bar .fa-search {
+        font-size: 16px;
+    }
+
+
+    /* FILTRE */
+
+    .dropdown {
+        font-size: 14px;
+        margin: 0 var(--margin-side);
+        height: 56px;
+        padding: 16px 20px 16px 24px;
+    }
+
+    .dropdown .fa-chevron-down {
+        font-size: 10px;
+    }
+
+
+    /* CARDS */
+
+    .countries {
+        grid-template-columns: auto auto auto auto;
+        grid-gap: 75px;
+        margin: 65px var(--margin-side);
+    }
+}

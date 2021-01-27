@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+		<title>Country | REST Countries API</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
+		<link rel="stylesheet" href="style.css"/>
+        <link rel="stylesheet" href="desktop.css">
+        <title>Country</title>
+	</head>
+
+	<body>
+
+		<div id="app">
+	
+            <!-- T1 -->
+            <!--v-show="searchPosition(country) == (this.countries.indexOf(country) != -1)"-->
+            <div  class="countries" :data-item='this.region'>
+                <div class="img-container">
+                    <img :src="this.flag" :alt="this.name"/>
+                </div>
+                <div class="card-body">
+                    <h3 class="country-name">{{this.name}}</h3>
+                    <p>
+                        <strong>Population:</strong>
+                        {{new Intl.NumberFormat("en-US").format(this.population)}}
+                    </p>
+                    <p class="country-region">
+                        <strong>Region:</strong>
+                        {{this.region}}
+                    </p>
+                    <p>
+                        <strong>Capital:</strong>
+                        {{this.capital}}
+                    </p>
+                </div>
+            </div>
+		</div>
+		
+		<script src="https://unpkg.com/vue@next"></script>
+		<script  type="module" src="app.js"></script>
+	</body>
+</html>

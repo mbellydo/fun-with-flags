@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+		<title>REST Countries API</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
+		<link rel="stylesheet" href="style.css"/>
+		<link rel="stylesheet" href="desktop.css">
+	</head>
+
+	<body>
+
+		<div id="app">
+			<header>
+
+				<div class="container">
+	
+					<h1>Where in the world?</h1>
+	
+					<!-- T2 -->
+					<button class="btn-toggle" id="toggle">
+						<i class="far fa-moon"></i>
+						<i class="fas fa-moon"></i>
+						Dark Mode
+					</button>
+	
+				</div>
+	
+			</header>
+	
+			<section>
+	
+				<div class="container">
+	
+					<div class="search-bar">
+	
+						<i class="fas fa-search"></i>
+	
+						<!-- T4 -->
+						<input id="search" type="text" placeholder="Search for a country..."  v-model="nameFilter"/>
+	
+					</div>
+	
+					<!-- T3 -->
+					<!--<div class="dropdown container" id="filter">
+						Filter by Region
+						<i class="fas fa-chevron-down"></i>
+						<ul>
+							<li v-for="region in regions" v-bind:class="open: region.dropdown" @click="toggleDropdown"><a data-filter="all" @click="aplicarFiltro('')">All</a></li>
+							<li><a data-filter="all" @click="aplicarFiltro('africa')">Africa</a></li>
+							<li><a data-filter="all" @click="aplicarFiltro('america')">Americas</a></li>
+							<li><a data-filter="all" @click="aplicarFiltro('asia')">Asia</a></li>
+							<li><a data-filter="all" @click="aplicarFiltro('europe')">Europe</a></li>
+							<li><a data-filter="all" @click="aplicarFiltro('oceania')">Oceania</a></li>
+						</ul>
+					</div> -->
+					<div class="dropdown container" id="filter">
+						<ul>
+							<li>Filter by Region
+								<ul>
+									<li><a data-filter="all" @click="aplicateFilter('')">All</a></li>
+									<li><a data-filter="Africa" @click="aplicateFilter('Africa')">Africa</a></li>
+									<li><a data-filter="Americas" @click="aplicateFilter('Americas')">Americas</a></li>
+									<li><a data-filter="Asia" @click="aplicateFilter('Asia')">Asia</a></li>
+									<li><a data-filter="Europe" @click="aplicateFilter('Europe')">Europe</a></li>
+									<li><a data-filter="Oceania" @click="aplicateFilter('Oceania')">Oceania</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+	
+				</div>
+	
+			</section>
+	
+			<section>
+	
+				<!-- T1 -->
+				<div v-for="country in countries" v-show="showCountry(country)" class="countries" :data-item='country.region' @click="newTab(country)">
+					<div class="img-container">
+						<img :src="country.flag" :alt="country.name"/>
+					</div>
+					<div class="card-body">
+						<h3 class="country-name">{{country.name}}</h3>
+						<p>
+							<strong>Population:</strong>
+							{{new Intl.NumberFormat("en-US").format(country.population)}}
+						</p>
+						<p class="country-region">
+							<strong>Region:</strong>
+							{{country.region}}
+						</p>
+						<p>
+							<strong>Capital:</strong>
+							{{country.capital}}
+						</p>
+					</div>
+				</div>
+	
+			</section>
+		</div>
+		
+
+		<!--<script src="script.js"></script>-->
+		<script src="https://unpkg.com/vue@next"></script>
+		<script  type="module" src="app.js"></script>
+	</body>
+</html>
