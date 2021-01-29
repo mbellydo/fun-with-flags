@@ -13,7 +13,7 @@ const app = Vue.createApp({
     created(){
         Country.fetchAll((data) => {
             this.countries = data
-            this.getCountries()            
+            this.getCountries()
         })
     },
     methods:{
@@ -33,12 +33,8 @@ const app = Vue.createApp({
 
             return isCountryInName && isCountryInRegion
         },
-        searchPosition(country){
-            let position = this.countries.indexOf(country) != -1
-            return position
-        },
-        newTab(){
-            window.open("./country.html", "_blank")
+        newTab(country){
+            window.open("./country.html?code="+country.alpha2Code, "_blank")
         }
     }
 })
