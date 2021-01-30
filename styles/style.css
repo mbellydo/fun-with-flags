@@ -14,7 +14,7 @@ body {
 
 	--font-primary: 'Nunito Sans', sans-serif;
 
-	--margin-side: 15px;
+	--margin-side: 4vw;
 
 	background-color: var(--background);
 	color: var(--text);
@@ -33,11 +33,12 @@ header {
 	background-color: var(--element);
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 	padding: 30px var(--margin-side);
-	margin-bottom: 25px;
+	margin-bottom: 22px;
+	width: 100%;
 }
 
-img {
-	max-width: 100%;
+section {
+	padding: 0px var(--margin-side);
 }
 
 .container {
@@ -45,8 +46,8 @@ img {
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-between;
-	margin: auto;
-	position: relative;
+	max-width: 1280px;
+	margin: 0 auto;
 }
 
 h1 {
@@ -54,6 +55,10 @@ h1 {
 	font-weight: 800;
 	font-size: 14px;
 	letter-spacing: 0.2px;
+}
+
+img {
+	max-width: 100%;
 }
 
 
@@ -75,18 +80,6 @@ h1 {
 	padding: 0;
 }
 
-.btn-toggle .fas {
-	display: none;
-}
-
-body.dark .btn-toggle .fas {
-	display: inline-block;
-}
-
-body.dark .btn-toggle .far {
-	display: none;
-}
-
 
 /* 	SEARCH INPUT */
 
@@ -97,11 +90,11 @@ body.dark .btn-toggle .far {
 	padding: 0px 30px;
 	height: 48px;
 	width: 100%;
-	margin: 0 var(--margin-side) 40px var(--margin-side);
+	max-width: 477px;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	position: relative;
+	margin-bottom: 40px;
 }
 
 .search-bar input {
@@ -112,6 +105,7 @@ body.dark .btn-toggle .far {
 	font-size: 12px;
 	letter-spacing: 0.2px;
 	margin-left: 20px;
+	width: 85%;
 }
 
 .search-bar .fa-search {
@@ -135,12 +129,15 @@ body.dark .btn-toggle .far {
 	font-size: 12px;
 	letter-spacing: 0.2px;
 	position: relative;
-	margin: 0px var(--margin-side) 32px var(--margin-side);
 	padding: 16px 24px;
 	width: 200px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
 }
 
-.dropdown .fa-chevron-down {
+.dropdown .fas {
 	font-size: 9px;
 }
 
@@ -148,7 +145,6 @@ body.dark .btn-toggle .far {
 	border-radius: 4px;
 	background-color: var(--element);
 	box-shadow: var(--shadow);
-	/*display: none;*/
 	padding: 8px 24px;
 	position: absolute;
 	top: 100%;
@@ -159,11 +155,7 @@ body.dark .btn-toggle .far {
 	margin: 4px 0 0 0;
 }
 
-/*.dropdown ul ul{
-	display: none;
-}*/
-
-.dropdown  ul>li:active{
+.dropdown  ul>li:active {
 	display: block;
 }
 
@@ -175,7 +167,7 @@ body.dark .btn-toggle .far {
 /* CARDS */
 
 .countries {
-	margin: 0 var(--margin-side) 65px var(--margin-side);
+	margin: 30px auto 65px auto;
 	display: grid;
 	grid-template-columns: auto;
 	justify-content: center;
@@ -227,9 +219,3 @@ body.dark .btn-toggle .far {
 .card-body p strong {
 	font-weight: 600;
 }
-
-.container.countries {
-	margin-top: -40px;
-	justify-content: center;
-}
-

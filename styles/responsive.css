@@ -1,14 +1,9 @@
-@media only screen and (min-width: 768px) {
-
-	body {
-        --margin-side: 80px;
-    }
-
+@media only screen and (min-width: 735px) {
+    
     header {
-        padding: 24px var(--margin-side);
         margin-bottom: 48px;
     }
-
+    
     h1 {
         font-size: 23px;
         letter-spacing: 0.02em;
@@ -26,9 +21,8 @@
     /* 	SEARCH INPUT */
 
     .search-bar {
-        width: 480px;
-        margin: 0 var(--margin-side);
         height: 56px;
+        margin: 0;
     }
 
     .search-bar input {
@@ -44,7 +38,6 @@
 
     .dropdown {
         font-size: 14px;
-        margin: 0 var(--margin-side);
         height: 56px;
         padding: 16px 20px 16px 24px;
     }
@@ -57,8 +50,27 @@
     /* CARDS */
 
     .countries {
-        grid-template-columns: auto auto auto auto;
+        grid-template-columns: auto auto;
         grid-gap: 75px;
-        margin: 65px var(--margin-side);
+        margin: 65px auto;
+    }
+}
+
+
+@media only screen and (min-width: 1024px) {
+   
+    /* CARDS */
+
+    .countries {
+        grid-template-columns: auto auto auto;
+    }
+}
+
+@media only screen and (min-width: 1390px) {
+   
+    /* CARDS */
+
+    .countries {
+        grid-template-columns: auto auto auto auto;
     }
 }

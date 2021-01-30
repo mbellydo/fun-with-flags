@@ -7,7 +7,9 @@ const app = Vue.createApp({
             regionFilter: '',
             nameFilter: '',
             countryFilter: '',
-            dropdown: false
+            dropdown: false, 
+            darkMode: false,
+            showFilter: false
         }
     },
     created(){
