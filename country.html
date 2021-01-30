@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 	<head>
 		<meta charset="UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -13,7 +12,6 @@
 	</head>
 
 	<body>
-
 		<div id="app">
             <div  class="countries">
                 <div class="img-container">
@@ -21,19 +19,11 @@
                 </div>
                 <div class="card-body">
                     <h3 class="country-name">{{country.name}}</h3>
-                    <p>
-                        <strong>Population:</strong>
-                        {{new Intl.NumberFormat("en-US").format(country.population)}}
-                    </p>
-                    <p class="country-region">
-                        <strong>Region:</strong>
-                        {{country.region}}
-                    </p>
-                    <p>
-                        <strong>Capital:</strong>
-                        {{country.capital}}
-                    </p>
-                    <p v-for="border in borders">{{getBorders()}}</p>
+                    <p><strong>Population:</strong> {{new Intl.NumberFormat("en-US").format(country.population)}}</p>
+                    <p class="country-region"><strong>Region:</strong> {{country.region}}</p>
+                    <p><strong>Capital:</strong> {{country.capital}}</p>
+                    <!--<h4>Borders:</h4>
+                    <p v-for="border in borders">{{getBorders()}}</p>-->
                 </div>
             </div>
 		</div>

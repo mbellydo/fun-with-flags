@@ -25,21 +25,12 @@ const app = Vue.createApp({
     methods:{
         getBorders(){
             this.borders = this.country.borders
-            /*this.borders.split(",")
-            for (var i=0 ; i < this.borders.length ; i++) {
-                document.write(this.borders[i] + " ");
-            }*/
-            let i = 0
-            do {
-                i = i + 1
-                let border = this.borders.pop()
+            for (let i = 0 ; i <= this.borders.length ; i++) {
+                let border = this.borders[i]
+                console.log(border)
+                
                 return border
-            } while (i <= this.borders.length);
-            /*for (let i = 0 ; i <= this.borders.length ; i++) {
-                let border = this.borders.pop()
-                //return this.borders.splice(i,1)
-                return border
-            }*/
+            }
         }
     }
 })
