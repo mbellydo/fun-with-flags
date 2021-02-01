@@ -1,4 +1,4 @@
-@media only screen and (min-width: 735px) {
+@media only screen and (min-width: 745px) {
     
     header {
         margin-bottom: 48px;
@@ -22,6 +22,7 @@
 
     .search-bar {
         height: 56px;
+        max-width: 477px;
         margin: 0;
     }
 
@@ -51,7 +52,17 @@
 
     .countries {
         grid-template-columns: auto auto;
-        grid-gap: 75px;
+        grid-gap: 5.1vw;
+        margin: 65px auto;
+    }
+
+    /* COUNTRY PAGE */
+
+    .back {
+        margin: 0 auto;
+    }
+
+    .country {
         margin: 65px auto;
     }
 }

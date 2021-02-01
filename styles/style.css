@@ -52,13 +52,13 @@ section {
 
 h1 {
 	margin: 0;
-	font-weight: 800;
+	font-weight: 700;
 	font-size: 14px;
 	letter-spacing: 0.2px;
 }
 
 img {
-	max-width: 100%;
+	max-width: 600px;
 }
 
 
@@ -90,7 +90,6 @@ img {
 	padding: 0px 30px;
 	height: 48px;
 	width: 100%;
-	max-width: 477px;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
@@ -204,18 +203,69 @@ img {
 	padding: 26px 26px 40px 26px;
 }
 
-.card-body h3 {
+h3 {
 	margin: 0 0 15px 0;
 	font-size: 18px;
-	font-weight: 800;
+	font-weight: 700;
 }
 
-.card-body p {
+p {
 	font-size: 14px;
 	font-weight: 300;
 	margin: 5px 0px;
 }
 
-.card-body p strong {
-	font-weight: 600;
+strong {
+	font-weight: 500;
+}
+
+
+/* COUNTRY PAGE */
+
+.back {
+	margin: 42px 7.6vw 0 7.6vw;
+	max-width: 1280px;
+}
+
+.country {
+	margin: 65px 7.6vw;
+	max-width: 1280px;
+}
+
+.country__card-body {
+	padding: 0px;
+	margin: 38px 0 0 0;
+}
+
+h2 {
+	font-size: 22px;
+	font-weight: 700;
+	margin-bottom: 22px;
+}
+
+.btn-back {
+	border-radius: 4px;
+	background-color: var(--element);
+	box-shadow: 0 0px 7px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+	font-family: var(--font-primary);
+	font-size: 14px;
+	font-weight: 100;
+	padding: 0px 26px;
+	letter-spacing: 0.2px;
+	border: none;
+	outline: none;
+	margin: 0;
+	align-items: center;
+	display: flex;
+	height: 34px;
+}
+
+.btn-back .fas {
+	font-size: 9px;
+	margin-right: 8px;
+}
+
+.country__description-block {
+	width: 300px;
 }

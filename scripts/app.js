@@ -36,7 +36,7 @@ const app = Vue.createApp({
             return isCountryInName && isCountryInRegion
         },
         newTab(country){
-            window.open("./country.html?code="+country.alpha2Code, "_blank")
+            window.open("./country.html?code="+country.alpha3Code, "_blank")
         }
     }
 })

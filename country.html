@@ -8,27 +8,65 @@
         
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
 		<link rel="stylesheet" href="/styles/style.css"/>
-        <link rel="stylesheet" href="/styles/desktop.css">
+        <link rel="stylesheet" href="/styles/responsive.css">
 	</head>
 
 	<body>
 		<div id="app">
-            <div  class="countries">
-                <div class="img-container">
-                    <img :src="country.flag" :alt="country.name"/>
-                </div>
-                <div class="card-body">
-                    <h3 class="country-name">{{country.name}}</h3>
-                    <p><strong>Population:</strong> {{new Intl.NumberFormat("en-US").format(country.population)}}</p>
-                    <p class="country-region"><strong>Region:</strong> {{country.region}}</p>
-                    <p><strong>Capital:</strong> {{country.capital}}</p>
-                    <!--<h4>Borders:</h4>
-                    <p v-for="border in borders">{{getBorders()}}</p>-->
-                </div>
+            <div class="toggleMode">
+
+                <header>
+                    <div class="container">
+        
+                        <h1>Where in the world?</h1>
+        
+                        <button class="btn-toggle" id="toggle" @click="darkMode=!darkMode">
+                            <i :class="[darkMode ? 'fas fa-moon' : 'far fa-moon']"></i>
+                            Dark Mode
+                        </button>
+        
+                    </div>
+                </header>
+                <section id="country-card">
+
+                    <div class="back">
+                        <button class="btn-back" @click="$router.go(-1)">
+                            <i class="fas fa-chevron-left"></i>
+                            Back
+                        </button>
+                    </div>
+
+                    <div class="country container">
+                        <div class="img-container">
+                            <img :src="country.flag" :alt="country.name"/>
+                        </div>
+                        <div class="country__card-body">
+                            <h2 class="country-name">{{country.name}}</h2>
+                            <div class="country__description container">
+                                <div class="country__description-block">
+                                    <p><strong>Native Name:</strong> {{country.nativeName}}</p>
+                                    <p><strong>Population:</strong> {{new Intl.NumberFormat("en-US").format(country.population)}}</p>
+                                    <p class="country-region"><strong>Region:</strong> {{country.region}}</p>
+                                    <p><strong>Sub Region:</strong> {{country.subregion}}</p>
+                                    <p><strong>Capital:</strong> {{country.capital}}</p>
+                                </div>
+                                <div class="country__description-block">
+                                    <p><strong>Top Level Domain:</strong> {{ country.topLevelDomain.map(domain => domain).join(', ') }}</p>
+                                    <p><strong>Currencies:</strong> {{ country.currencies.map(currency => currency.name).join(', ') }}</p>
+                                    <p><strong>Languages:</strong> {{ country.languages.map(language => language.name).join(', ') }}</p>
+                                </div>
+                            </div>
+                            <div>
+                                <p><strong>Border Countries:</strong></p><button v-for="border in country.borders" @click="newTab(border)">{{ (this.countries.find(c => c.alpha3Code == border)).name }}</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
             </div>
 		</div>
 		
 		<script src="https://unpkg.com/vue@next"></script>
-		<script  type="module" src="/scripts/getCountry.js"></script>
+        <script  type="module" src="/scripts/getCountry.js"></script>
 	</body>
 </html>
