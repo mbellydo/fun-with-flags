@@ -23,7 +23,10 @@ const app = Vue.createApp({
     },
     methods: {
         newTab(border){
-            window.open("./country.html?code="+border, "_blank")
+            window.open("./country.html?code="+border, "_self")
+        },
+        goIndex() {
+            window.open("./index.html", "_self")
         }
     }
 })

@@ -31,7 +31,11 @@ const app = Vue.createApp({
         showCountry(country){
             let isCountryInRegion = !this.regionFilter || this.regionFilter == country.region
 
-            let isCountryInName = !this.nameFilter || country.name.indexOf(this.nameFilter) != -1
+            let countryName = country.name.toLowerCase()
+
+            let nameFilter = this.nameFilter.toLowerCase()
+
+            let isCountryInName = !nameFilter || countryName.indexOf(nameFilter) != -1
 
             return isCountryInName && isCountryInRegion
         },
