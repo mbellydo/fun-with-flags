@@ -67,6 +67,8 @@ section {
 	color: var(--text);
 	font-family: var(--font-primary);
 	padding-bottom: 65px;
+
+	min-height: 100vh;
 }
 
 
