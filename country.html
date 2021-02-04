@@ -13,42 +13,47 @@
 
 	<body>
 		<div id="app">
-            <div class="toggleMode">
+            <div :class="[ darkMode ? 'dark-mode' : 'light-mode' ]">
 
                 <header>
                     <div class="container">
         
                         <h1>Where in the world?</h1>
         
-                        <button class="btn-toggle" id="toggle" @click="darkMode=!darkMode">
+                        <button class="btn-toggle-mode" id="toggle" @click="darkMode=!darkMode">
                             <i :class="[darkMode ? 'fas fa-moon' : 'far fa-moon']"></i>
                             Dark Mode
                         </button>
         
                     </div>
                 </header>
-                <section id="country-card">
 
-                    <div class="back">
+                <section id="country-page">
+
+                    <div class="back container">
                         <button class="btn-back" @click="goIndex">
                             <i class="fas fa-chevron-left"></i>
                             Back
                         </button>
                     </div>
 
-                    <div class="country container">
-                        <div class="img-container">
+                    <div class="country">
+
+                        <div class="country__photo">
                             <img :src="country.flag" :alt="country.name"/>
                         </div>
+
                         <div class="country__card-body">
-                            <h2 class="country-name">{{country.name}}</h2>
-                            <div class="country__description container">
+
+                            <h2 class="country__name-title">{{ country.name }}</h2>
+                            
+                            <div class="country__description">
                                 <div class="country__description-block">
-                                    <p><strong>Native Name:</strong> {{country.nativeName}}</p>
-                                    <p><strong>Population:</strong> {{new Intl.NumberFormat("en-US").format(country.population)}}</p>
-                                    <p class="country-region"><strong>Region:</strong> {{country.region}}</p>
-                                    <p><strong>Sub Region:</strong> {{country.subregion}}</p>
-                                    <p><strong>Capital:</strong> {{country.capital}}</p>
+                                    <p><strong>Native Name:</strong> {{ country.nativeName }}</p>
+                                    <p><strong>Population:</strong> {{ new Intl.NumberFormat("en-US").format(country.population) }}</p>
+                                    <p class="country-region"><strong>Region:</strong> {{ country.region }}</p>
+                                    <p><strong>Sub Region:</strong> {{ country.subregion }}</p>
+                                    <p><strong>Capital:</strong> {{ country.capital }}</p>
                                 </div>
                                 <div class="country__description-block">
                                     <p><strong>Top Level Domain:</strong> {{ country.topLevelDomain.map(domain => domain).join(', ') }}</p>
@@ -56,8 +61,12 @@
                                     <p><strong>Languages:</strong> {{ country.languages.map(language => language.name).join(', ') }}</p>
                                 </div>
                             </div>
-                            <div>
-                                <p><strong>Border Countries:</strong></p><button v-for="border in country.borders" @click="newTab(border)">{{ (this.countries.find(c => c.alpha3Code == border)).name }}</button>
+
+                            <div class="country__borders">
+                                <p class="country__border-title">Border Countries:</p>
+                                <div class="country__border-buttons">
+                                    <button class="btn-border" v-for="border in country.borders" @click="newTab(border)">{{ (this.countries.find(c => c.alpha3Code == border)).name }}</button>
+                                </div>
                             </div>
                         </div>
                     </div>

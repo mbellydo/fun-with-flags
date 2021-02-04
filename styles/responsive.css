@@ -1,87 +1,133 @@
-@media only screen and (min-width: 745px) {
+@media only screen and (min-width: 760px) {
     
     header {
         margin-bottom: 48px;
     }
+
+    .input-element {
+        height: 56px;
+    }
     
+
+    /* TYPOGRAPHY */
+
     h1 {
         font-size: 23px;
         letter-spacing: 0.02em;
     }
 
+    h2 {
+        font-size: 32px;
+    }
 
-    /* BOTÓ LIGHT/DARK MODE */
+    .input-element__text {
+        font-size: 14px;
+    }
 
-    .btn-toggle {
+
+    /* BUTTON LIGHT/DARK MODE */
+
+    .btn-toggle-mode {
         font-size: 16px;
         width: 110px;
     }
 
 
-    /* 	SEARCH INPUT */
+    /* 	SEARCH */
 
-    .search-bar {
-        height: 56px;
+    .input-element--search {
         max-width: 477px;
-        margin: 0;
+        margin-bottom: 0;
     }
 
-    .search-bar input {
-        font-size: 14px;
-    }
-
-    .search-bar .fa-search {
+    .input-element--search i {
         font-size: 16px;
     }
 
 
-    /* FILTRE */
+    /* FILTER */
 
-    .dropdown {
-        font-size: 14px;
-        height: 56px;
-        padding: 16px 20px 16px 24px;
-    }
-
-    .dropdown .fa-chevron-down {
+    .input-element--filter i {
         font-size: 10px;
     }
 
 
     /* CARDS */
 
-    .countries {
+    .countries-grid {
         grid-template-columns: auto auto;
         grid-gap: 5.1vw;
         margin: 65px auto;
     }
 
+
     /* COUNTRY PAGE */
 
-    .back {
-        margin: 0 auto;
+    #country-page {
+        --margin-side: 4vw;
     }
 
-    .country {
-        margin: 65px auto;
+    .country__border-title {
+        margin: 0 15px 10px 0;
+        width: auto;
+    }
+
+    .country__description p {
+        font-size: 16px;
+    }
+
+    .btn-border {
+        font-size: 16px;
     }
 }
 
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 990px) {
    
     /* CARDS */
 
-    .countries {
+    .countries-grid {
         grid-template-columns: auto auto auto;
     }
+    
 }
 
-@media only screen and (min-width: 1390px) {
+@media only screen and (min-width: 1200px) {
+
+    /* COUNTRY PAGE */
+
+    .country {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1280px;
+        margin: 65px auto 0 auto;
+    }
+
+    .country__photo {
+        margin: 0;
+        width: 39vw;
+        max-width: 560px;
+    }
+
+    .country__card-body {
+        margin: 0;
+        width: 600px;
+    }
+
+    .country__name-title {
+        margin-top: 23px;
+        margin-bottom: 23px;
+    }
+}
+
+@media only screen and (min-width: 1410px) {
    
     /* CARDS */
 
-    .countries {
+    .countries-grid {
         grid-template-columns: auto auto auto auto;
+        grid-gap: 74px;
     }
 }

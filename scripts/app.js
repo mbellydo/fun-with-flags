@@ -12,12 +12,14 @@ const app = Vue.createApp({
             showFilter: false
         }
     },
+    
     created(){
         Country.fetchAll((data) => {
             this.countries = data
             this.getCountries()
         })
     },
+
     methods:{
         getCountries(){
             Country.fetchAll((data) =>{
@@ -25,9 +27,11 @@ const app = Vue.createApp({
                 console.log("Datos recuperados: ", data)
             })
         },
+
         aplicateFilter(activeRegion){
             this.regionFilter = activeRegion
         },
+
         showCountry(country){
             let isCountryInRegion = !this.regionFilter || this.regionFilter == country.region
 
@@ -39,6 +43,7 @@ const app = Vue.createApp({
 
             return isCountryInName && isCountryInRegion
         },
+
         newTab(country){
             window.open("./country.html?code="+country.alpha3Code, "_blank")
         }

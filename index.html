@@ -15,80 +15,79 @@
 	<body>
 		
 		<div id="app">
-			<header>
-
-				<div class="container">
-	
-					<h1>Where in the world?</h1>
-	
-					<button class="btn-toggle" id="toggle" @click="darkMode=!darkMode">
-						<i :class="[darkMode ? 'fas fa-moon' : 'far fa-moon']"></i>
-						Dark Mode
-					</button>
-	
-				</div>
-	
-			</header>
-	
-			<section id="user-input">
-	
-				<div class="container">
-	
-					<div class="search-bar">
-	
-						<i class="fas fa-search"></i>
-	
-						<input id="search" type="text" placeholder="Search for a country..."  v-model="nameFilter"/>
-	
-					</div>
-	
-					<div class="dropdown" id="filter" @click="showFilter=!showFilter">
-						Filter by Region
-						<i v-if="!showFilter" class="fas fa-chevron-right"></i>
-						<i v-else class="fas fa-chevron-down"></i>
-						<ul v-show="showFilter">
-							<li><a data-filter="all" @click="aplicateFilter('')">All</a></li>
-							<li><a data-filter="Africa" @click="aplicateFilter('Africa')">Africa</a></li>
-							<li><a data-filter="Americas" @click="aplicateFilter('Americas')">Americas</a></li>
-							<li><a data-filter="Asia" @click="aplicateFilter('Asia')">Asia</a></li>
-							<li><a data-filter="Europe" @click="aplicateFilter('Europe')">Europe</a></li>
-							<li><a data-filter="Oceania" @click="aplicateFilter('Oceania')">Oceania</a></li>
-						</ul>
-						
-					</div>
-	
-				</div>
-	
-			</section>
-	
-			<section id="countries">
-
-				<div class="container countries">
-
-					<div v-for="country in countries" v-show="showCountry(country)" class="card" :data-item='country.region' @click="newTab(country)">
-						<div class="img-container">
-							<img :src="country.flag" :alt="country.name"/>
+			<div :class="[ darkMode ? 'dark-mode' : 'light-mode' ]">
+				
+				<header>
+					<div class="container">
+		
+						<h1>Where in the world?</h1>
+		
+						<button class="btn-toggle-mode" id="toggle" @click="darkMode=!darkMode">
+							<i :class="[darkMode ? 'fas fa-moon' : 'far fa-moon']"></i>
+							Dark Mode
+						</button>
+		
+					</div>		
+				</header>
+		
+				<section id="user-input">
+		
+					<div class="container">
+		
+						<div class="input-element input-element--search">
+		
+							<i class="fas fa-search"></i>
+		
+							<input id="search" class="input-element__text" type="text" placeholder="Search for a country..."  v-model="nameFilter"/>
+		
 						</div>
-						<div class="card-body">
-							<h3 class="country-name">{{country.name}}</h3>
-							<p>
-								<strong>Population:</strong>
-								{{new Intl.NumberFormat("en-US").format(country.population)}}
-							</p>
-							<p class="country-region">
-								<strong>Region:</strong>
-								{{country.region}}
-							</p>
-							<p>
-								<strong>Capital:</strong>
-								{{country.capital}}
-							</p>
+		
+						<div id="filter" @click="showFilter=!showFilter" class="input-element input-element--filter input-element__text">
+							Filter by Region
+							<i v-if="!showFilter" class="fas fa-chevron-right"></i>
+							<i v-else class="fas fa-chevron-down"></i>
+							<ul v-show="showFilter">
+								<li><a data-filter="all" @click="aplicateFilter('')">All</a></li>
+								<li><a data-filter="Africa" @click="aplicateFilter('Africa')">Africa</a></li>
+								<li><a data-filter="Americas" @click="aplicateFilter('Americas')">Americas</a></li>
+								<li><a data-filter="Asia" @click="aplicateFilter('Asia')">Asia</a></li>
+								<li><a data-filter="Europe" @click="aplicateFilter('Europe')">Europe</a></li>
+								<li><a data-filter="Oceania" @click="aplicateFilter('Oceania')">Oceania</a></li>
+							</ul>
+							
 						</div>
+		
 					</div>
+		
+				</section>
+		
+				<section id="countries">
 
-				</div>
-	
-			</section>
+					<div class="countries-grid">
+
+						<div v-for="country in countries" v-show="showCountry(country)" class="card" :data-item='country.region' @click="newTab(country)">
+							
+							<div class="card__photo">
+								<img :src="country.flag" :alt="country.name"/>
+							</div>
+							
+							<div class="card__body">
+
+								<h3 class="card__title">{{ country.name }}</h3>
+								
+								<div class="card__description">
+									<p><strong>Population:</strong> {{ new Intl.NumberFormat("en-US").format(country.population) }}</p>
+									<p><strong>Region:</strong> {{ country.region }}</p>
+									<p><strong>Capital:</strong> {{ country.capital }}</p>
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+		
+				</section>
+			</div>
 		</div>
 		
 		<script src="https://unpkg.com/vue@next"></script>
